@@ -184,6 +184,191 @@
     .sobre-assinatura p { font-family: var(--serif); font-style: italic; font-size: 1.08rem; color: var(--azul); line-height: 1.5; }
     .sobre-crp { margin-top: 10px; font-size: 0.7rem; letter-spacing: 0.13em; color: var(--oliva); text-transform: uppercase; }
 
+    /* ── DEPOIMENTOS ── */
+    #depoimentos {
+      background: var(--branco-2);
+      padding: 130px 0 140px;
+      position: relative;
+      overflow: hidden;
+    }
+    #depoimentos::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(198,165,158,0.35), transparent);
+    }
+    #depoimentos::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 50% 60% at 85% 20%, rgba(198,165,158,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .dep-inner { position: relative; z-index: 1; }
+
+    .dep-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 60px;
+      margin-bottom: 80px;
+    }
+    .dep-pretitulo {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--oliva);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .dep-pretitulo::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--nude);
+    }
+    .dep-titulo {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      color: var(--azul);
+      line-height: 1.2;
+      font-weight: 400;
+    }
+    .dep-titulo em {
+      font-style: italic;
+      color: var(--nude);
+    }
+    .dep-fonte {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--oliva);
+      padding-bottom: 8px;
+      white-space: nowrap;
+    }
+    .dep-fonte-icone {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+    .dep-fonte-num {
+      font-family: var(--serif);
+      font-size: 1rem;
+      letter-spacing: 0;
+      color: var(--azul);
+      font-style: italic;
+    }
+
+    .dep-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .dep-card {
+      background: var(--branco);
+      padding: 50px 38px 38px;
+      border-radius: var(--radius);
+      position: relative;
+      transition: transform var(--t), box-shadow var(--t);
+      display: flex;
+      flex-direction: column;
+    }
+    .dep-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px -20px rgba(32,65,102,0.18);
+    }
+    /* Card central com leve destaque */
+    .dep-card.dep-card-destaque {
+      background: var(--azul);
+      transform: translateY(-12px);
+    }
+    .dep-card.dep-card-destaque:hover {
+      transform: translateY(-16px);
+      box-shadow: 0 30px 70px -20px rgba(32,65,102,0.4);
+    }
+    .dep-aspas {
+      position: absolute;
+      top: 22px;
+      left: 30px;
+      font-family: var(--serif);
+      font-size: 4.2rem;
+      line-height: 1;
+      color: var(--nude);
+      opacity: 0.35;
+      font-style: italic;
+    }
+    .dep-card.dep-card-destaque .dep-aspas {
+      color: var(--nude);
+      opacity: 0.55;
+    }
+    .dep-texto {
+      font-family: var(--serif);
+      font-size: 1.02rem;
+      line-height: 1.65;
+      color: var(--texto);
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 32px;
+      flex-grow: 1;
+      position: relative;
+      z-index: 1;
+    }
+    .dep-card.dep-card-destaque .dep-texto {
+      color: rgba(250,249,247,0.92);
+    }
+    .dep-assinatura {
+      padding-top: 22px;
+      border-top: 1px solid var(--areia);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .dep-card.dep-card-destaque .dep-assinatura {
+      border-top-color: rgba(202,197,191,0.2);
+    }
+    .dep-nome {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--azul);
+    }
+    .dep-card.dep-card-destaque .dep-nome {
+      color: var(--nude);
+    }
+    .dep-meta {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--oliva);
+      font-weight: 400;
+    }
+    .dep-card.dep-card-destaque .dep-meta {
+      color: rgba(202,197,191,0.55);
+    }
+
+    .dep-rodape {
+      margin-top: 70px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--texto-suave);
+      font-weight: 300;
+      font-style: italic;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
     /* ── DIFERENCIAIS ── */
     #diferenciais { background: var(--azul); padding: 110px 0; }
     .dif-header { text-align: center; margin-bottom: 60px; }
@@ -280,11 +465,22 @@
       .transf-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .secao { padding: 80px 0; }
+      /* Depoimentos */
+      #depoimentos { padding: 90px 0 100px; }
+      .dep-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 50px; align-items: start; }
+      .dep-fonte { padding-bottom: 0; }
+      .dep-grid { grid-template-columns: 1fr; gap: 22px; }
+      .dep-card.dep-card-destaque { transform: none; }
+      .dep-card.dep-card-destaque:hover { transform: translateY(-4px); }
+      .dep-card { padding: 44px 30px 32px; }
+      .dep-aspas { font-size: 3.4rem; top: 18px; left: 24px; }
+      .dep-rodape { margin-top: 50px; }
     }
     @media (max-width: 580px) {
       .hero-h1 { font-size: 1.9rem; }
       .btn-wpp { width: 100%; justify-content: center; }
       .nav-logo-img { height: 36px; }
+      .dep-texto { font-size: 0.96rem; }
     }
   </style>
 </head>
@@ -418,6 +614,61 @@
           <p class="sobre-crp">Emanuelle Ruediger · CRP 12/25894</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="container">
+    <div class="dep-inner">
+
+      <div class="dep-header reveal">
+        <div>
+          <p class="dep-pretitulo">Quem já caminhou comigo</p>
+          <h2 class="dep-titulo">A escuta de quem<br><em>esteve aqui dentro.</em></h2>
+        </div>
+        <div class="dep-fonte">
+          <svg class="dep-fonte-icone" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2l2.39 7.36H22l-6.18 4.49 2.36 7.36L12 16.72l-6.18 4.49 2.36-7.36L2 9.36h7.61z" fill="currentColor"/>
+          </svg>
+          <span><span class="dep-fonte-num">5,0</span> &nbsp;·&nbsp; Avaliações Google</span>
+        </div>
+      </div>
+
+      <div class="dep-grid">
+
+        <div class="dep-card reveal d1">
+          <span class="dep-aspas">“</span>
+          <p class="dep-texto">A Emanuelle é uma pessoa sensível, gentil e tem muito conhecimento. Tem um dom especial. Recomendo.</p>
+          <div class="dep-assinatura">
+            <span class="dep-nome">Sabrina B.</span>
+            <span class="dep-meta">Paciente</span>
+          </div>
+        </div>
+
+        <div class="dep-card dep-card-destaque reveal d2">
+          <span class="dep-aspas">“</span>
+          <p class="dep-texto">Incrível. A Emanuelle é uma profissional muito acolhedora, sensível e competente. Companhia segura e afetuosa — obrigada por ser esse ser humano de luz.</p>
+          <div class="dep-assinatura">
+            <span class="dep-nome">Thaisline D.</span>
+            <span class="dep-meta">Paciente</span>
+          </div>
+        </div>
+
+        <div class="dep-card reveal d3">
+          <span class="dep-aspas">“</span>
+          <p class="dep-texto">Excelente profissional. Competente, dedicada, sempre buscando atualizações. Transmite sabedoria, aconchego e luz.</p>
+          <div class="dep-assinatura">
+            <span class="dep-nome">Francieli H.</span>
+            <span class="dep-meta">Paciente</span>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="dep-rodape reveal d3">Depoimentos compartilhados por pacientes em avaliações públicas no Google. Identificações reduzidas em respeito à privacidade.</p>
+
     </div>
   </div>
 </section>
